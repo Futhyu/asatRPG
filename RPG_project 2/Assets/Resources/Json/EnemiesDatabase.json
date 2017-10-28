@@ -1,0 +1,41 @@
+[
+  {
+    "id": 0,
+    "name": "Slime",
+    "friendly": true,
+    "level": 1,
+    "cost": 75.0,  //calculate like this: cost = ((pureDamage+maxMana+MaxHealth) / level) * 15(const)
+    "pureDamage": 0.0,
+    "moveSpeed": 1.0,
+    "viewDistance": 0.0,
+    "attackTime": 0.0,
+    "maxHealth": 5.0,
+    "maxMana": 0.0
+  },
+  {
+    "id": 1,
+    "name": "Baldric",
+    "friendly": false,
+    "level":  4,
+    "cost": 195.0,
+    "pureDamage":  7.0,
+    "moveSpeed": 4.0,
+    "viewDistance": 7.0,
+    "attackTime": 0.6,
+    "maxHealth": 45.0,
+    "maxMana": 0.0
+  },
+  {
+    "id": 2,
+    "name":  "Dark Mage",
+    "friendly": false,
+    "level":  5,
+    "cost": 225.0,
+    "pureDamage":  0.0,
+    "moveSpeed": 5.0,
+    "viewDistance": 9.0,
+    "attackTime": 1.0,
+    "maxHealth": 30.0,
+    "maxMana": 45.0
+  }
+]

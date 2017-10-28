@@ -1,0 +1,20 @@
+{
+	"id":1,
+	"questName":"More wood",
+	"description":"I need more wood. Can you help me?",
+	"reciepent":0,
+	"requiredLevel":0,
+	"reward":
+	{
+		"exp":300.0,
+		"money":10.0,
+		"items":[{"id":1,"amount":1}]
+	},
+	"task":
+	{
+		"talkTo":[],
+		"items":[{"id":1, "amount":10}],
+		"kills":[]
+	}
+}
+

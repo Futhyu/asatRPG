@@ -1,0 +1,126 @@
+[
+  {
+    "id": 0,
+    "questName": "Slimes Everywhere!",
+    "description": "AAAAAAA. NOOOOOOO. F*cken slimes",
+    "recipient": 0,
+    "requiredLevel": 2,
+    "reward": {
+      "exp": 95.0, //cost(id) * amount + requiredLevel *10
+      "money": 5.0,
+      "items": [
+        {
+          "id": 1,
+          "amount": 1
+        }
+      ]
+    },
+    "task": {
+      "talkTo": 0,
+      "items": [ ],
+      "kills": [
+        {
+          "id": 0,
+          "amount": 1,
+          "initialAmount": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 1,
+    "questName": "Crystals",
+    "description": "Crystals! Fresh from Kazakus!",
+    "recipient": 0,
+    "requiredLevel": 1,
+    "reward": {
+      "exp": 110.0,        // cost(itemID) * amount + requeiredLevel*10
+      "money": 10.0,
+      "items": []
+    },
+    "task": {
+      "talkTo": 0,
+      "items": [
+        {
+          "id": 2,
+          "amount": 1
+        }
+      ],
+      "kills": []
+    }
+  },
+  {
+    "id": 2,
+    "questName": "Swoooooord",
+    "description": "Sword! Fresh from Kazakus!",
+    "recipient": 0,
+    "requiredLevel": 2,
+    "reward": {
+      "exp": 80.0,
+      "money": 0.0,
+      "items": [
+        {
+          "id": 1,
+          "amount": 1
+        }
+      ]
+    },
+    "task": {
+      "talkTo": 0,
+      "items": [
+        {
+          "id": 1,
+          "amount": 1
+        }
+      ],
+      "kills": []
+    }
+  },
+  {
+    "id": 3,
+    "questName": "Again...",
+    "description": "slimeslimeslimeslime",
+    "recipient": 0,
+    "requiredLevel": 3,
+    "reward": {
+      "exp": 255.0,
+      "money": 0.0,
+      "items": []
+    },
+    "task": {
+      "talkTo": 0,
+      "items": [ ],
+      "kills": [
+        {
+          "id": 0,
+          "amount": 3,
+          "initialAmount": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "questName": "F*ck magic! or are you a mage?",
+    "description": "Pls, kill the dark mag. He was near my home. Thanks!",
+    "recipient": 0,
+    "requiredLevel": 4,
+    "reward": {
+      "exp": 275.0,
+      "money": 0.0,
+      "items": []
+    },
+    "task": {
+      "talkTo": 0,
+      "items": [ ],
+      "kills": [
+        {
+          "id": 2,
+          "amount": 1,
+          "initialAmount": 0
+        }
+      ]
+    }
+  }
+
+]

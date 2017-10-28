@@ -1,0 +1,27 @@
+[
+  {
+    "ID": 0,
+    "title": "Sword",
+    "isStackable": true,
+    "quantity": 1,
+    "sprite": { "name": "icons_70" },
+    "type": 1
+    
+  },
+  {
+    "ID": 1,
+    "title": "Long Sword",
+    "isStackable": true,
+    "quantity": 1,
+    "sprite": { "name": "icons_71" },
+    "type": 1
+  },
+  {
+    "ID": 2,
+    "title": "Yellow Crystal",
+    "isStackable": true,
+    "quantity": 1,
+    "sprite": { "name": "roguelikeSheet_transparent_1316" },
+    "type": 2
+  }
+]

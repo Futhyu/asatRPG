@@ -1,0 +1,63 @@
+[
+  {
+    "abilityName": "Inferno",
+    "spellPrefab": { "name": "Inferno" },
+    "icon": { "name": "magic_circle_icon_17" },
+    "behaviour": {
+      "areaRadius": 2.0,
+      "effectDuration": 1.0,
+      "baseEffectDamage": 4.0,
+      "damageTickDuration": 1.0
+    },
+    "manaCost": 10,
+    "minDamage": 3.0,
+    "maxDamage": 5.0,
+    "projectileSpeed": 0.0,
+    "cooldown": 2.0,
+    "castTime": 0.0,
+    "type": 0,
+    "isCooldown": false
+  },
+  {
+    "abilityName": "Frostbolt",
+    "spellPrefab": { "name": "Frostbolt" },
+    "icon": { "name": "frostbolt" },
+    "behaviour": {
+      "minDistance": 3.0,
+      "maxDistance": 9.0,
+      "damage": 1.0,
+      "stunTime": 1.0,
+      "effectDuration": 2.0,
+      "baseEffectDamage": 2
+    },
+    "manaCost": 15,
+    "minDamage": 3.0,
+    "maxDamage": 5.0,
+    "projectileSpeed": 10.0,
+    "cooldown": 2.5,
+    "castTime": 2.0,
+    "type": 0,
+    "isCooldown": false
+  },
+  {
+    "abilityName": "Fireball",
+    "spellPrefab": { "name": "Fireball" },
+    "icon": { "name": "fireball" },
+    "behaviour": {
+      "minDistance": 1.0,
+      "maxDistance": 7.0,
+      "damage": 0.0,
+      "stunTime": 1.0,
+      "effectDuration": 3.0,
+      "baseEffectDamage": 3.0
+    },
+    "manaCost": 10,
+    "minDamage": 1.0,
+    "maxDamage": 5.0,
+    "projectileSpeed": 10.0,
+    "cooldown": 1.0,
+    "castTime": 1.0,
+    "type": 0,
+    "isCooldown": false
+  }
+]
