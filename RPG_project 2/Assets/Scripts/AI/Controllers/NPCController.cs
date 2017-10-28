@@ -107,9 +107,9 @@ public class NPCController : MonoBehaviour {
     //}
 
     bool HasUnfinishedQuests() {
-        bool temp = true;
+        bool temp = false;
         foreach(Quest quest in quests) {
-            if (temp) temp = IsQuestUnfinished(quest);
+            if (!temp) temp = IsQuestUnfinished(quest);
             else break;
         }
         return temp;

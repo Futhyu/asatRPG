@@ -60,7 +60,7 @@ public class AbilityManager : MonoBehaviour {
 
             }
             if (ability.abilitySpell.type == Ability.AbilityType.AOE) {
-                Instantiate(ability.abilitySpell.spellPrefab, magician.position, Camera.main.GetComponent<Transform>().rotation);
+                Instantiate(ability.abilitySpell.spellPrefab, magician.position, Camera.main.GetComponent<Transform>().rotation, magician);
                 //abilityObj.transform.position = magicSpawn.position;
                 //abilityObj.transform.SetParent(transform.parent);
             }

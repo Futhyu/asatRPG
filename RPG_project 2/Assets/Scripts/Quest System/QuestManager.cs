@@ -177,11 +177,13 @@ public class QuestManager : MonoBehaviour {
     }
 
     public void SpawnItem(Item itemToSpawn, Vector2 coord) {
-        Debug.Log(itemToSpawn.name + " spawn at position " + coord.ToString());
-        //ItemDatabase.database[i] = itemToAdd;
-        GameObject questItem = Instantiate(Resources.Load<GameObject>("Prefabs/Item New" + itemToSpawn.name));
-        questItem.GetComponent<ItemPickup>().item = itemToSpawn;
-        questItem.transform.position = coord;
-
+        if (itemToSpawn != null) {
+            Debug.Log(itemToSpawn.name + " spawn at position " + coord.ToString());
+            //ItemDatabase.database[i] = itemToAdd;
+            GameObject questItem = Instantiate(Resources.Load<GameObject>("Prefabs/Item"));
+            questItem.gameObject.name = itemToSpawn.name;
+            questItem.GetComponent<ItemPickup>().item = itemToSpawn;
+            questItem.transform.position = coord;
+        }
     }
 }

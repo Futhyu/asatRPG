@@ -17,9 +17,9 @@ MonoBehaviour:
     type: 2}
   manaCost: 10
   buff:
-    value: 0
+    value: 0.5
     buffType: 0
-    time: 0
+    time: 2
   damage: 3
   projectileSpeed: 0
   cooldown: 5
@@ -29,7 +29,7 @@ MonoBehaviour:
   maxDistance: 0
   isRandom: 0
   stunTime: 0
-  areaRadius: 0
+  areaRadius: 2.75
   effectDuration: 1
   isOccupied: 0
   isCooldown: 0

@@ -144,4 +144,5 @@ public class EnemyController : MonoBehaviour {
     
     public bool IsConfused { set { isConfused = value; } }
     public Vector3 MoveDirection { get { return moveDirection; } }
+    public float MoveSpeed { get { return moveSpeed; } set { moveSpeed = value; } }
 }

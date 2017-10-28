@@ -4,7 +4,7 @@ using System.Collections;
 public class SpellConfigurator : MonoBehaviour {
 
     public Ability ability;
-    
+    private Vector2 pos;
     void Start() {
         if(ability != null) {
             if(ability.type == Ability.AbilityType.Range) {
@@ -15,6 +15,7 @@ public class SpellConfigurator : MonoBehaviour {
                 
             }
             else if(ability.type == Ability.AbilityType.AOE) {
+                pos = transform.position;
                 CircleCollider2D aoeColl = GetComponent<CircleCollider2D>();
                 Sprite sprite = GetComponent<SpriteRenderer>().sprite;
                 aoeColl.radius = sprite.bounds.max.x;
@@ -47,18 +48,20 @@ public class SpellConfigurator : MonoBehaviour {
     }
 
     private IEnumerator AOE() {
+        transform.position = pos;
         yield return new WaitForSeconds(ability.effectDuration);
         Destroy(gameObject);
         yield return null;
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        if(other.CompareTag("Enemy") && !other.isTrigger && transform.GetComponentInParent<PlayerController>()) {
+        if (other.CompareTag("Enemy") && !other.isTrigger && transform.GetComponentInParent<PlayerController>()) {
             if (ability != null) {
                 EnemyStats target = other.GetComponent<EnemyStats>();
                 target.TakeDamage(ability.damage);
                 target.AddBuff(ability.buff);
                 if (ability.type == Ability.AbilityType.Range) Destroy(gameObject);
+                
             }
         }
         else if (other.CompareTag("Player") && !other.isTrigger && transform.GetComponentInParent<EnemyController>()) {

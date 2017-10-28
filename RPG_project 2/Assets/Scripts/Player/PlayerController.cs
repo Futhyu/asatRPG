@@ -128,6 +128,10 @@ public class PlayerController : MonoBehaviour {
 
     }
     
+    public void Stun(float time) {
+
+    }
+
     public static void SetInteractable(Interactable interactable) {
         main.interactable = interactable;
     }

@@ -102,16 +102,34 @@ public class CharacterStats : MonoBehaviour {
         }
         else if (buff.buffType == global::Buff.BuffType.Health) {
             float time = 0;
-            while (time <= buff.time) {
-                TakeDamage(buff.value);
-                time += 1;
+            while (time < buff.time) {
                 yield return new WaitForSeconds(1f);
+                time += 1;
+                TakeDamage(buff.value);
             }
         }
         else if (buff.buffType == global::Buff.BuffType.Movement) {
-            PlayerController.main.moveSpeed *= buff.value;
+            bool isPlayer = GetComponent<PlayerStats>();
+
+            if (isPlayer) PlayerController.main.moveSpeed *= buff.value;
+
+            else {
+                EnemyController enemy = GetComponent<EnemyController>();
+                enemy.MoveSpeed *= buff.value;
+            }
             yield return new WaitForSeconds(buff.time);
-            PlayerController.main.moveSpeed /= buff.value;
+
+            if(isPlayer) PlayerController.main.moveSpeed /= buff.value;
+
+            else {
+                EnemyController enemy = GetComponent<EnemyController>();
+                enemy.MoveSpeed /= buff.value;
+            }
+        }
+        else if(buff.buffType == global::Buff.BuffType.Stun) {
+            bool isPlayer = GetComponent<PlayerStats>();
+
+            //if(isPlayer) 
         }
         yield return null;
     }

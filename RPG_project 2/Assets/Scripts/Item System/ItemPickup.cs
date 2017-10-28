@@ -4,6 +4,10 @@ public class ItemPickup : Interactable {
 
     public Item item;
 
+    void Start() {
+        GetComponent<SpriteRenderer>().sprite = item.icon;
+    }
+
     public override void Interact() {
         base.Interact();
         FindObjectOfType<Inventory>();

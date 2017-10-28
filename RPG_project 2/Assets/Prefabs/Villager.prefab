@@ -19,15 +19,15 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4000012091506594}
-  - component: {fileID: 61000013159359638}
-  - component: {fileID: 114000011654161614}
+  - component: {fileID: 58899106662745640}
+  - component: {fileID: 114623177240006720}
   m_Layer: 0
   m_Name: Dialogue Zone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1000012220361508
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,8 +95,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!61 &61000013159359638
-BoxCollider2D:
+--- !u!58 &58899106662745640
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -108,18 +108,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 1
 --- !u!61 &61000013429644578
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -158,23 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   quests:
   - {fileID: 11400000, guid: 4f25481e73b3c7946894f72b200ec31c, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
---- !u!114 &114000011654161614
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000012063744764}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfbc3291273fe2446b8b6eb95b503a3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 3
-  npc: {fileID: 0}
+  - {fileID: 11400000, guid: 277645d0d505aae468a53641acc7d886, type: 2}
 --- !u!114 &114470695659676436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,6 +166,19 @@ MonoBehaviour:
     - Hey there! My name is Dwarf!
     - I'm here to guide you and bla bla bla..
     - And wake you up in the morning, of course!
+--- !u!114 &114623177240006720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012063744764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfbc3291273fe2446b8b6eb95b503a3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  npc: {fileID: 114000011012968474}
 --- !u!212 &212000011748651972
 SpriteRenderer:
   m_ObjectHideFlags: 1

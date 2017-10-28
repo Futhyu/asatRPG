@@ -125,7 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0
   ability: {fileID: 0}
-  friendly: 0
+  friendly: 1
   viewDistance: 0
   attackTime: 0
   cost: 0
