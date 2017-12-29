@@ -14,7 +14,6 @@ public class AbilityBookButton : MonoBehaviour {
             //    AbilityManager.instance.AbilityToHotbar(AbilityManager.GetAbility(ability));
             //    AbilityManager.instance.abilityList.Add(AbilityManager.GetAbility(ability));
             //}
-
             AbilityManager.instance.AbilityToHotbar(ability);
 
         });

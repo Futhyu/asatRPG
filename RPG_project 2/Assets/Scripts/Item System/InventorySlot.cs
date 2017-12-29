@@ -26,7 +26,9 @@ public class InventorySlot : MonoBehaviour {
     }
 
     public void OnRemoveButton() {
-        if(!item.isQuestItem) Inventory.instance.Remove(item);
+        if (item != null) {
+            if (!item.isQuestItem) Inventory.instance.Drop(item);
+        }
     }
 
     public void UseItem() {

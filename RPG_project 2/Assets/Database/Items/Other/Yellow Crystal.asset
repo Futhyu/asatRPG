@@ -16,4 +16,5 @@ MonoBehaviour:
   icon: {fileID: 21302632, guid: f2d5168ed8be56a4285c6dfaf6fda531, type: 3}
   isDefaultItem: 0
   isQuestItem: 1
+  controller: {fileID: 0}
   quantity: 1

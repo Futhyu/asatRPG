@@ -7,7 +7,7 @@ public class MageController : EnemyController {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         thePlayer = FindObjectOfType<PlayerController>();
-        viewPlane = GetComponent<CircleCollider2D>();
+        viewPlane = GetComponentInChildren<CircleCollider2D>();
         isCasting = false;
         viewPlane.radius = viewDistance;
     }

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cdb8b9e622d5b64d8046ca038141ae7, type: 3}
+  m_Name: Metal Pants
+  m_EditorClassIdentifier: 
+  id: 4
+  name: Metal Pants
+  icon: {fileID: 21300866, guid: faa330c115dbc8e4e8d8cb73e766237d, type: 3}
+  isDefaultItem: 0
+  isQuestItem: 0
+  controller: {fileID: 9100000, guid: 91b465f8ea19cec46a808f7b2bd38d17, type: 2}
+  quantity: 1
+  equipSlot: 3
+  armorModifier: 0.25
+  damageModifier: 0

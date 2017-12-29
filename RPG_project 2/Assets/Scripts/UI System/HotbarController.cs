@@ -13,8 +13,7 @@ public class HotbarController : MonoBehaviour {
     public Transform original;
     public Slot previosSlot;
     public Slot thisSlot;
-
-    public Transform[] Items;
+    
     public GameObject objToInst;
     public int scrollPosition;
     public Slot[] slots;
@@ -98,7 +97,7 @@ public class HotbarController : MonoBehaviour {
             thisSlot.GetComponentInChildren<Spell>().CastSpell();
         }
     }
-
+    
     //void Selected() {
     //    thisSlot.GetComponent<Image>().color = Color.red;
     //    previosSlot.GetComponent<Image>().color = original.GetComponent<Image>().color;

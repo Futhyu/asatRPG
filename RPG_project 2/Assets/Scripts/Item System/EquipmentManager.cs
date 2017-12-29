@@ -39,9 +39,7 @@ public class EquipmentManager : MonoBehaviour {
 
         currentEquipment[slotIndex] = newItem;
 
-        if(newItem.equipSlot == EquipmentSlot.Weapon) {
-            PlayerController.main.Equip(newItem);
-        }
+        PlayerController.main.Equip(newItem);
     }
 
     public void Unequip(int slotIndex) {
@@ -50,15 +48,12 @@ public class EquipmentManager : MonoBehaviour {
             inventory.Add(oldItem);
 
             currentEquipment[slotIndex] = null;
-
-            if(oldItem.equipSlot == EquipmentSlot.Weapon) {
-                PlayerController.main.Equip(null);
-            }
-
+            
+            PlayerController.main.Unequip(oldItem);
+            
             if (onEquipmentChanged != null) {
                 onEquipmentChanged.Invoke(null, oldItem);
             }
-
         }
     }
 

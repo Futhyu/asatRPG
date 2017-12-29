@@ -13,7 +13,6 @@ public class Equipment : Item {
         EquipmentManager.instance.Equip(this);
         RemoveFromInventory();
     }
-
 }
 
-public enum EquipmentSlot { Head, Chest, Legs, Weapon, Shield, Feet }
+public enum EquipmentSlot { Head, Chest, Arms, Legs, Weapon, Shield, Foot }

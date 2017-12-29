@@ -4,7 +4,6 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
     public static PlayerController main;
-
     private PlayerStats thePS;
     
     private Animator anim;
@@ -20,13 +19,22 @@ public class PlayerController : MonoBehaviour {
     //private static bool playerExists;
     private Interactable interactable;
     //WEAPON
-    [Header("Weapon")]
-    private GameObject equipedWeapon;
+    [Header("Fight System")]
     public Transform weaponSlot;
+    public Transform attack;
+    public float attackRadius;
     private bool isAttacking;
+    public bool isCasting { private get; set; }
     public float attackTime;
     public float attackDamage { get; private set; }
-    
+
+    [Header("Equipment System")]
+    public Transform head;
+    public Transform chest;
+    public Transform arms;
+    public Transform legs;
+    public Transform foot;
+
     public string startPoint;
     
     //public float strength { get; private set; }
@@ -45,8 +53,6 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
         myRigidbody = GetComponent<Rigidbody2D>();
         thePS = GetComponent<PlayerStats>();
-        weaponSlot = GameObject.Find("Player/Weapon").transform;
-
         canMove = true;
         lastMove = new Vector2(0, -1);
         Invoke("SetAttackDamage", 0.5f);
@@ -58,14 +64,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update() {
-        isMove = false;
-
         if (!canMove) {
             myRigidbody.velocity = Vector2.zero;
-            return;
+            //return;
         }
 
-        if (!isAttacking) {
+        if (!isAttacking && canMove) {
             // if not attack then move
             moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
 
@@ -79,45 +83,90 @@ public class PlayerController : MonoBehaviour {
             }
             else {
                 myRigidbody.velocity = Vector2.zero;
+                isMove = false;
             }
         }
-        
+        anim.SetBool("isAttacking", isAttacking);
+        anim.SetBool("isMoving", isMove);
+        anim.SetBool("isCasting", isCasting);
         anim.SetFloat("MoveX", Input.GetAxisRaw("Horizontal"));
         anim.SetFloat("MoveY", Input.GetAxisRaw("Vertical"));
-        anim.SetBool("isMoving", isMove);
         anim.SetFloat("LastMoveX", lastMove.x);
         anim.SetFloat("LastMoveY", lastMove.y);
+        EquipmentAnimator.instance.Animate(moveInput, lastMove, isMove, isAttacking, isCasting);
         GetInput();
     }
-
+    
     private void SetAttackDamage() {
         attackDamage = GameLogic.CalculatePlayerBaseAttackDamage(this, thePS); 
     }
 
-    public void Equip(Equipment weapon) {
-        if (equipedWeapon != null) {
-            Destroy(weaponSlot.GetChild(0).gameObject);
+    #region Equiping
+    public void Equip(Equipment item) {
+        if (item != null) {
+            if (item.equipSlot == EquipmentSlot.Weapon) {
+                weaponSlot.GetComponent<Animator>().runtimeAnimatorController = item.controller;
+                SetAttackDamage();
+            }
+            else if (item.equipSlot == EquipmentSlot.Chest) {
+                chest.GetComponent<Animator>().runtimeAnimatorController = item.controller;
+            }
+            else if (item.equipSlot == EquipmentSlot.Arms) {
+                arms.GetComponent<Animator>().runtimeAnimatorController = item.controller;
+            }
+            else if (item.equipSlot == EquipmentSlot.Head) {
+                head.GetComponent<Animator>().runtimeAnimatorController = item.controller;
+            }
+            else if (item.equipSlot == EquipmentSlot.Legs) {
+                legs.GetComponent<Animator>().runtimeAnimatorController = item.controller;
+            }
+            else if (item.equipSlot == EquipmentSlot.Foot) {
+                foot.GetComponent<Animator>().runtimeAnimatorController = item.controller;
+            }
         }
-        if (weapon != null) {
-            equipedWeapon = (GameObject)Instantiate(Resources.Load<GameObject>("Prefabs/Weapons/" + weapon.name), weaponSlot);
-
-            equipedWeapon.transform.SetParent(weaponSlot);
-            equipedWeapon.transform.position = weaponSlot.transform.position;
-            equipedWeapon.transform.rotation = weaponSlot.transform.rotation;
-        }
-        SetAttackDamage();
     }
+
+    public void Unequip(Equipment item) {
+        if (item != null) {
+            if (item.equipSlot == EquipmentSlot.Weapon) {
+                weaponSlot.GetComponent<Animator>().runtimeAnimatorController = null;
+                weaponSlot.GetComponent<SpriteRenderer>().sprite = null;
+                SetAttackDamage();
+            }
+            else if (item.equipSlot == EquipmentSlot.Chest) {
+                chest.GetComponent<Animator>().runtimeAnimatorController = null;
+                chest.GetComponent<SpriteRenderer>().sprite = null;
+            }
+            else if (item.equipSlot == EquipmentSlot.Arms) {
+                arms.GetComponent<Animator>().runtimeAnimatorController = null;
+                arms.GetComponent<SpriteRenderer>().sprite = null;
+            }
+            else if (item.equipSlot == EquipmentSlot.Head) {
+                head.GetComponent<Animator>().runtimeAnimatorController = null;
+                head.GetComponent<SpriteRenderer>().sprite = null;
+            }
+            else if (item.equipSlot == EquipmentSlot.Legs) {
+                legs.GetComponent<Animator>().runtimeAnimatorController = null;
+                legs.GetComponent<SpriteRenderer>().sprite = null;
+            }
+            else if (item.equipSlot == EquipmentSlot.Foot) {
+                foot.GetComponent<Animator>().runtimeAnimatorController = null;
+                foot.GetComponent<SpriteRenderer>().sprite = null;
+            }
+        }
+    }
+    #endregion
 
     void GetInput() {
 
-        if (Input.GetKeyUp(KeyCode.F)) {
-            if (equipedWeapon != null) {
+        if (Input.GetButtonDown("Attack")) {
+            if (!isAttacking) {
                 StartCoroutine("Attack");
             }
             else
                 Debug.Log("Not equiped");
         }
-        if (Input.GetKeyUp(KeyCode.E)) {
+        if (Input.GetButtonDown("Interact")) {
             if(interactable != null) {
                 interactable.Interact();
             }
@@ -139,14 +188,12 @@ public class PlayerController : MonoBehaviour {
     IEnumerator Attack() {
         isAttacking = true;
         myRigidbody.velocity = Vector2.zero;
-        anim.SetBool("isAttack", true);
         yield return new WaitForSeconds(attackTime);
+        Fight2D.Action(attack.position, attackRadius, 8, 1, false);
         isAttacking = false;
-        anim.SetBool("isAttack", false);
-        
         //Input.
     }
-    
+
 }
 
 

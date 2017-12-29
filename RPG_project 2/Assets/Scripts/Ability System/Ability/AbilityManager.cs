@@ -23,7 +23,6 @@ public class AbilityManager : MonoBehaviour {
     
     #region Ability
     void AddAbility(Ability ability) {
-
         GameObject abilityObj = Instantiate(Resources.Load<GameObject>("Prefabs/Ability"), hb.slots[FindEmptySlot()].transform) as GameObject;
         
         abilityObj.GetComponent<Image>().sprite = ability.icon;
@@ -33,7 +32,6 @@ public class AbilityManager : MonoBehaviour {
         abilityObj.transform.localPosition = Vector3.zero;
 
     }
-
     public void CastAbility(Spell ability, Transform magician) {
 
         if (ability == null) {

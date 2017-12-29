@@ -37,4 +37,10 @@ public class Inventory : MonoBehaviour {
 
     }
 
+    public void Drop(Item item) {
+        items.Remove(item);
+        QuestManager.instance.SpawnItem(item, new Vector2(transform.position.x, transform.position.y-1));
+        if (onItemChangedCallback != null) onItemChangedCallback.Invoke();
+    }
+
 }

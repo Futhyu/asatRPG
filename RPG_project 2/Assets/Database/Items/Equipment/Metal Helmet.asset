@@ -9,13 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cdb8b9e622d5b64d8046ca038141ae7, type: 3}
-  m_Name: Sword
+  m_Name: Metal Helmet
   m_EditorClassIdentifier: 
-  id: 0
-  name: Sword
-  icon: {fileID: 21300000, guid: d82ae52740a17e740921cd83f6a88935, type: 3}
+  id: 1
+  name: Plate Helm
+  icon: {fileID: 21300156, guid: 8e1f8f3b0f1cebd45a97a996af356711, type: 3}
   isDefaultItem: 0
+  isQuestItem: 0
+  controller: {fileID: 9100000, guid: 0479176eedb7cd942a60dc128c37ee8f, type: 2}
   quantity: 1
-  equipSlot: 3
-  armorModifier: 0
-  damageModifier: 1
+  equipSlot: 0
+  armorModifier: 0.25
+  damageModifier: 0

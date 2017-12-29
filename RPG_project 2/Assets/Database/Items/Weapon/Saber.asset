@@ -9,13 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cdb8b9e622d5b64d8046ca038141ae7, type: 3}
-  m_Name: Helmet
+  m_Name: Saber
   m_EditorClassIdentifier: 
-  id: 1
-  name: Helmet of Protection
-  icon: {fileID: 0}
+  id: 7
+  name: Saber of the Warrior
+  icon: {fileID: 21300000, guid: d82ae52740a17e740921cd83f6a88935, type: 3}
   isDefaultItem: 0
+  isQuestItem: 0
+  controller: {fileID: 9100000, guid: b1a2ddd95cd242343be76d59e15785be, type: 2}
   quantity: 1
-  equipSlot: 0
-  armorModifier: 3
+  equipSlot: 4
+  armorModifier: 1
   damageModifier: 0

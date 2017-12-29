@@ -55,7 +55,7 @@ public class Spell : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
         isCast = true;
         AbilityManager.instance.IsCast = true;
         UIManager.instance.CastBar.gameObject.SetActive(!UIManager.instance.CastBar.gameObject.activeInHierarchy);
-        
+        PlayerController.main.isCasting = true;
         PlayerController.main.canMove = false;
         yield return new WaitForSeconds(abilitySpell.castTime);
         UIManager.instance.CastBar.gameObject.SetActive(!UIManager.instance.CastBar.gameObject.activeInHierarchy);
@@ -64,6 +64,7 @@ public class Spell : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHan
         timer.Stop();
         timer.Reset();
         AbilityManager.instance.IsCast = false;
+        PlayerController.main.isCasting = false;
         AbilityManager.instance.CastAbility(this, PlayerController.main.gameObject.transform);
         isCooldown = true;
         PlayerController.main.canMove = true;   // need to rebuild it

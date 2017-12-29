@@ -8,6 +8,10 @@ public class Item : ScriptableObject {
     public Sprite icon = null;
     public bool isDefaultItem = false;
     public bool isQuestItem;
+    [Space(10)]
+    [Tooltip("For animation item. If it has not then null here")]
+    public RuntimeAnimatorController controller;
+    [Space(10)]
     [Range(1, 64)]
     public int quantity = 1;
 

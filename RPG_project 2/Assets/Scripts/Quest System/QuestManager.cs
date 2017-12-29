@@ -108,11 +108,8 @@ public class QuestManager : MonoBehaviour {
     }
 
     public void ShowQuestInfo(Quest quest) {
-
-
         theUI.questInfo.gameObject.SetActive(true);
-
-
+        
         theUI.questInfoCompleteButton.gameObject.SetActive(false);
 
         theUI.questInfoAcceptButton.onClick.RemoveAllListeners();

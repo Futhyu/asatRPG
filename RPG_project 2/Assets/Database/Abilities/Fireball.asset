@@ -25,9 +25,9 @@ MonoBehaviour:
   cooldown: 1
   castTime: 1
   type: 0
-  minDistance: 4
+  minDistance: 0
   maxDistance: 7
-  isRandom: 1
+  isRandom: 0
   stunTime: 0
   areaRadius: 0
   effectDuration: 0
