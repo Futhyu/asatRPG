@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 public class NPCTalk : Interactable {
     
@@ -10,12 +9,16 @@ public class NPCTalk : Interactable {
         if (instance == null) instance = this;
     }
     #endregion
-    [Tooltip("Just add npc parent of object, okay?")]
-    public NPCController npc;
+    [Tooltip("Just add  a npc parent of object, okay?")]
+    public NPCController NPC;
+
+    void Start() {
+        textToDisplay = "Press E to talk with " + NPC.name;
+    }
 
     public override void Interact() {
         base.Interact();
-        npc.NPCTalk();
+        NPC.NPCTalk();
     }
 
     //[HideInInspector]

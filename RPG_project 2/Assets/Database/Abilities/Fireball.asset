@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   abilityName: Fireball
-  icon: {fileID: 21300000, guid: e790f2eea2f48754b9be0155c97eb306, type: 3}
+  icon: {fileID: 21300564, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
   spellPrefab: {fileID: 1000010451630740, guid: 42daac50917d4bd44b5439dbdfe26013,
     type: 2}
   manaCost: 10

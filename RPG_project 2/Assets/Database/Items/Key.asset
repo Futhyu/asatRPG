@@ -9,11 +9,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 78c4a36d0f3077f4eb8f891cdb01e976, type: 3}
-  m_Name: Yellow Crystal
+  m_Name: Key
   m_EditorClassIdentifier: 
-  id: 2
-  name: Yellow Crystal
-  icon: {fileID: 21302632, guid: f2d5168ed8be56a4285c6dfaf6fda531, type: 3}
-  type: 1
+  id: 8
+  name: Key
+  icon: {fileID: 21300462, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
+  type: 3
   controller: {fileID: 0}
   quantity: 1

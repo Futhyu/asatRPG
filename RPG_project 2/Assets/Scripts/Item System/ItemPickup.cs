@@ -6,6 +6,7 @@ public class ItemPickup : Interactable {
 
     void Start() {
         GetComponent<SpriteRenderer>().sprite = item.icon;
+        textToDisplay = "Press E to pick up " + item.name;
     }
 
     public override void Interact() {

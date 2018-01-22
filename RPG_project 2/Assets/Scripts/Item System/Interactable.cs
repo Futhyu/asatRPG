@@ -5,13 +5,14 @@ public class Interactable : MonoBehaviour {
 
     public float radius = 3f;
     private bool playerIsHere;
-
+    protected string textToDisplay;
     private bool hasInteracted = false;
 
     void Awake() {
         CircleCollider2D coll = GetComponent<CircleCollider2D>();
         coll.radius = radius;
         coll.isTrigger = true;
+        textToDisplay = "Press E to interact..";
     }
 
     public virtual void Interact() {
@@ -20,17 +21,19 @@ public class Interactable : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
-            UIManager.instance.screenText.gameObject.SetActive(true);
+            UIManager.ToogleScreenText(textToDisplay);
             playerIsHere = true;
             PlayerController.SetInteractable(this);
         }
     }
     void OnTriggerExit2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) {
-            UIManager.instance.screenText.gameObject.SetActive(false);
+            UIManager.ToogleScreenText("");
             playerIsHere = false;
             PlayerController.SetInteractable(null);
         }
     }
     
+    
+
 }

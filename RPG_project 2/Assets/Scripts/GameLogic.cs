@@ -23,7 +23,7 @@ public class GameLogic {
         return mana;
     }
 
-    public static float CalculateExperience(EnemyStats enemy) {
+    public static float CalculateExpForEnemy(EnemyStats enemy) {
         float exp = enemy.cost * (enemy.Level / PlayerStats.instance.Level);
         return exp;
     }
@@ -32,13 +32,13 @@ public class GameLogic {
         return exp;
     }
 
-    public static float ChangeValueTo(float value, float modifier, float time) {
-        float temp = 0;
-        while(temp < time) {
-            temp += Time.deltaTime;
-            value -= modifier;
-        }
-        return value;
-    }
+    //public static float ChangeValueTo(float value, float modifier, float time) {
+    //    float temp = 0;
+    //    while(temp < time) {
+    //        temp += Time.deltaTime;
+    //        value -= modifier;
+    //    }
+    //    return value;
+    //}
     
 }

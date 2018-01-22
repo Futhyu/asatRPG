@@ -53,7 +53,7 @@ public class NPCController : MonoBehaviour {
 
                         //deleting quest items from inventory
                         foreach (var questItem in quests[i].task.items) {
-                            Inventory.instance.Remove(questItem.item);
+                            questItem.item.RemoveFromInventory();
                         }
                         //destroy quest from questbook
                         Destroy(UIManager.instance.questBookContent.Find(quests[i].id.ToString()).gameObject);

@@ -90,25 +90,25 @@ public class CharacterStats : MonoBehaviour {
     IEnumerator Buff() {
         Buff buff = buffs.Dequeue();
 
-        if (buff.buffType == global::Buff.BuffType.Damage) {
+        if (buff.type == global::Buff.BuffType.DamageIncreasing) {
             damage.baseValue *= buff.value;
             yield return new WaitForSeconds(buff.time);
             damage.baseValue /= buff.value;
         }
-        else if (buff.buffType == global::Buff.BuffType.Armor) {
+        else if (buff.type == global::Buff.BuffType.Armor) {
             armor.baseValue *= buff.value;
             yield return new WaitForSeconds(buff.time);
             armor.baseValue /= buff.value;
         }
-        else if (buff.buffType == global::Buff.BuffType.Health) {
+        else if (buff.type == global::Buff.BuffType.DamageOverTime) {
             float time = 0;
             while (time < buff.time) {
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(0.1f);
                 time += 1;
                 TakeDamage(buff.value);
             }
         }
-        else if (buff.buffType == global::Buff.BuffType.Movement) {
+        else if (buff.type == global::Buff.BuffType.Movement) {
             bool isPlayer = GetComponent<PlayerStats>();
 
             if (isPlayer) PlayerController.main.moveSpeed *= buff.value;
@@ -126,14 +126,29 @@ public class CharacterStats : MonoBehaviour {
                 enemy.MoveSpeed /= buff.value;
             }
         }
-        else if(buff.buffType == global::Buff.BuffType.Stun) {
+        else if(buff.type == global::Buff.BuffType.Stun) {
             bool isPlayer = GetComponent<PlayerStats>();
 
             //if(isPlayer) 
         }
+        else if(buff.type == global::Buff.BuffType.Healing) {
+            float time = 0;
+            while (time < buff.time) {
+                yield return new WaitForSeconds(0.1f);
+                time += 1;
+                Heal(buff.value);
+            }
+        }
+
         yield return null;
     }
-    
+
+    void Heal(float hp) {
+        if (currentHealth + hp >= maxHealth) currentHealth = maxHealth;
+        else currentHealth += hp;
+    }
+
+    #region ExpAndStats
     public void SetExperience(float exp) {
         experience += exp;
         float experienceNeeded = GameLogic.ExperienceForNextLevel(Level);
@@ -141,7 +156,7 @@ public class CharacterStats : MonoBehaviour {
         if (experience >= experienceNeeded) LevelUp();
     }
     
-    public void SetStats() {
+    protected void SetStats() {
         SetExperience(0);
         maxHealth = GameLogic.CalculateHealth(this);
         maxMana = GameLogic.CalculateMana(this);
@@ -157,13 +172,13 @@ public class CharacterStats : MonoBehaviour {
         currentHealth = perHealth * maxHealth;
         currentMana = perMana * maxMana;
     }
-
     void LevelUp() {
         level++;
         strength.baseValue++;
         intelligence.baseValue++;
         UpdateStats();
     }
+    #endregion
 
     public int Level { get { return level; } }
     public float Experience { get { return experience; } }

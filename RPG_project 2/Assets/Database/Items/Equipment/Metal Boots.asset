@@ -13,9 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 5
   name: Metal Boots
-  icon: {fileID: 21300446, guid: e528661aa9eb24f43a8f7bbd62756f69, type: 3}
-  isDefaultItem: 0
-  isQuestItem: 0
+  icon: {fileID: 21300400, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
+  type: 2
   controller: {fileID: 9100000, guid: 451e44b92766a8a4a92da00347775329, type: 2}
   quantity: 1
   equipSlot: 6

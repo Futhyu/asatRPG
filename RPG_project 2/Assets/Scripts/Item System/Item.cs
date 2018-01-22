@@ -6,10 +6,11 @@ public class Item : ScriptableObject {
     public int id = 0;
     new public string name = "New Item";
     public Sprite icon = null;
-    public bool isDefaultItem = false;
-    public bool isQuestItem;
+
+    public ItemType type;
+
     [Space(10)]
-    [Tooltip("For animation item. If it has not then null here")]
+    [Tooltip("For animating item. If it has not then null here")]
     public RuntimeAnimatorController controller;
     [Space(10)]
     [Range(1, 64)]
@@ -23,5 +24,6 @@ public class Item : ScriptableObject {
     public void RemoveFromInventory() {
         Inventory.instance.Remove(this);
     }
-
 }
+
+public enum ItemType { Default, Quest, Equipment, Key, Potion }

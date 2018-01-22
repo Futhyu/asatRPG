@@ -1,8 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
-using LitJson;
 
 public class QuestManager : MonoBehaviour {
     
@@ -123,8 +120,8 @@ public class QuestManager : MonoBehaviour {
         });
         //Set Texts
         Transform info = canvas.Find("Quest Info/Background/Info/Viewport/Content").transform;
-        UIManager.instance.questInfoContent.Find("Name").GetComponent<Text>().text = quest.questName;
-        UIManager.instance.questInfoContent.Find("Description").GetComponent<Text>().text = quest.description;
+        UIManager.instance.questName.text = quest.questName;
+        UIManager.instance.questDescription.text = quest.description;
 
         //task
         string taskString = "Task: \n";

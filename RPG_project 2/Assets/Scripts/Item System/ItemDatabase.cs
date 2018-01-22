@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 
-public class ItemDatabase : MonoBehaviour{
+public class ItemDatabase {
 
     #region Singleton
     public static ItemDatabase instance;
@@ -9,9 +10,16 @@ public class ItemDatabase : MonoBehaviour{
         if (instance == null) instance = this;
     }
     #endregion
-    
-    void Start() {
 
+    public Item[] database;
+
+    public int LastID() {
+        RefreshDatabase();
+        return database.Length;
     }
 
+    void RefreshDatabase() {
+        database = AssetDatabase.LoadAllAssetsAtPath("Assets/Database/Items/") as Item[];
+    }
 }
+#endif

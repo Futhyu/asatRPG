@@ -6,18 +6,15 @@ public class UIManager : MonoBehaviour {
     public static UIManager instance;
     private PlayerController thePlayer;
     
-    public delegate void OnCast(float value);
-    public OnCast onCast;
-
     [Header("Character Info")]
-    private Image info;
+    public Image info;
 
     public Transform canvas;
     //quest info
-    
     [Header("Quest Info")]
     public Transform questInfo;
-    public Transform questInfoContent;
+    public Text questName;
+    public Text questDescription;
     public Button questInfoAcceptButton;
     public Button questInfoCancelButton;
     public Button questInfoCompleteButton;
@@ -25,17 +22,17 @@ public class UIManager : MonoBehaviour {
     [Header("Quest Book")]
     public Transform questBook;
     public Transform questBookContent;
-    private Button questBookCancelButton;
+    public Button questBookCancelButton;
     //interact text
     [Header("Interactive Text")]
-    public Transform screenText;
+    public Text displayText;
     private Transform castBar;
     public float valueCastBar;
     //ability book
     [Header("Ability Book")]
     public Transform abilityBook;
     public Transform abilityBookContent;
-    private Transform abilityBookCancelButton;
+    public Button abilityBookCancelButton;
     [Header("Inventory")]
     private Transform inventory;
 
@@ -45,20 +42,8 @@ public class UIManager : MonoBehaviour {
         canvas = FindObjectOfType<Canvas>().transform;
         if (!instance)
             instance = this;
-        info = canvas.transform.Find("Character Info").GetComponent<Image>();
         
-        questInfo = canvas.Find("Quest Info");
-        questInfoContent = questInfo.Find("Background/Info/Viewport/Content");
-        questInfoAcceptButton = questInfo.Find("Background/Buttons/Accept").GetComponent<Button>();
-        questInfoCompleteButton = questInfo.Find("Background/Buttons/Complete").GetComponent<Button>();
-
-        screenText = canvas.Find("Screen Text");
-
-        questBook = canvas.Find("Quest Book");
-        questBookContent = canvas.Find("Quest Book/Background/Info/Viewport/Content");
-
         //quest info Cancel Button
-        questInfoCancelButton = questInfo.Find("Background/Buttons/Cancel").GetComponent<Button>();
         questInfoCancelButton.onClick.AddListener(() => {
             questInfo.gameObject.SetActive(false);
             thePlayer.canMove = true;
@@ -69,10 +54,7 @@ public class UIManager : MonoBehaviour {
             questBook.gameObject.SetActive(false);
         });
         //ability book
-        abilityBook = canvas.Find("Ability Book");
-        abilityBookContent = abilityBook.Find("Background/Info/Content");
-        abilityBookCancelButton = abilityBook.Find("Background/Buttons/Cancel");
-        abilityBookCancelButton.GetComponent<Button>().onClick.AddListener(() => {
+        abilityBookCancelButton.onClick.AddListener(() => {
             AbilityManager.instance.ToogleAbilityBook(false);
         });
 
@@ -80,16 +62,7 @@ public class UIManager : MonoBehaviour {
 
         castBar = canvas.Find("Cast Bar");
     }
-
     
-
-    //IEnumerator ChangeValue() {
-    //    if (onCast != null) {
-    //        onCast(valueCastBar);
-    //    }
-    //    yield return null;
-    //}
-
     void Update() {
         if (thePlayer != null) {
             info.transform.Find("Lvl").GetComponent<Text>().text = "Lvl: " + thePlayer.GetComponent<PlayerStats>().Level;
@@ -110,10 +83,11 @@ public class UIManager : MonoBehaviour {
         }
     }
     
-    public void ToogleInventory() {
-        inventory.gameObject.SetActive(!inventory.gameObject.activeInHierarchy);
+    public static void ToogleScreenText(string text) {
+        instance.displayText.text = text;
+        instance.displayText.transform.parent.gameObject.SetActive(!instance.displayText.transform.parent.gameObject.activeSelf);
     }
-
+       
     public Vector2 ScreenToCanvasPoint(Vector2 screenPosition) {
         Vector2 viewportPoint = Camera.main.ScreenToViewportPoint(screenPosition);
 
@@ -123,5 +97,7 @@ public class UIManager : MonoBehaviour {
     }
 
     public Transform CastBar { get { return castBar; } }
+
+    
 
 }

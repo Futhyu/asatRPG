@@ -13,9 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 7
   name: Saber of the Warrior
-  icon: {fileID: 21300000, guid: d82ae52740a17e740921cd83f6a88935, type: 3}
-  isDefaultItem: 0
-  isQuestItem: 0
+  icon: {fileID: 21300140, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
+  type: 2
   controller: {fileID: 9100000, guid: b1a2ddd95cd242343be76d59e15785be, type: 2}
   quantity: 1
   equipSlot: 4

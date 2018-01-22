@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: f2d5168ed8be56a4285c6dfaf6fda531
-timeCreated: 1509175929
+timeCreated: 1514627327
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -594,7 +594,7 @@ TextureImporter:
     21301174: roguelikeSheet_transparent_587
     21301176: roguelikeSheet_transparent_588
     21301178: roguelikeSheet_transparent_589
-    21301180: roguelikeSheet_transparent_590
+    21301180: chest_closed
     21301182: roguelikeSheet_transparent_591
     21301184: roguelikeSheet_transparent_592
     21301186: roguelikeSheet_transparent_593
@@ -648,7 +648,7 @@ TextureImporter:
     21301282: roguelikeSheet_transparent_641
     21301284: roguelikeSheet_transparent_642
     21301286: roguelikeSheet_transparent_643
-    21301288: roguelikeSheet_transparent_644
+    21301288: chest_opened
     21301290: roguelikeSheet_transparent_645
     21301292: roguelikeSheet_transparent_646
     21301294: roguelikeSheet_transparent_647
@@ -10039,7 +10039,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_590
+      name: chest_closed
       rect:
         serializedVersion: 2
         x: 646
@@ -10795,7 +10795,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: roguelikeSheet_transparent_644
+      name: chest_opened
       rect:
         serializedVersion: 2
         x: 646

@@ -13,19 +13,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   questName: Slimes Everywhere!
-  description: AAAAAAA. NOOOOOOO. F*cken slimes
+  description: AAAAAAA. NOOOOOOO. F*cken slimes. Kill them, please. And I will give
+    you key for chest. There a lot of Goodies. Thanks!
   reciepent: 0
-  requiredLevel: 1
+  requiredLevel: 2
   reward:
     exp: 95
     money: 5
     items:
-    - item: {fileID: 11400000, guid: dbfad656391ae3e4aa84ecae02434c6f, type: 2}
+    - item: {fileID: 11400000, guid: 06ffe81fc102caa4b8a1c203ab924cc6, type: 2}
       amount: 1
   task:
     talkTo: 0
     items: []
     kills:
     - name: Slime
-      amount: 2
+      amount: 0
       initialAmount: 1

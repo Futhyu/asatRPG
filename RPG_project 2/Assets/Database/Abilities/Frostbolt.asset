@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Name: Frostbolt
   m_EditorClassIdentifier: 
   abilityName: Frostbolt
-  icon: {fileID: 21300000, guid: 026933f33047c5f4386b3ef998d4813b, type: 3}
+  icon: {fileID: 21300658, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
   spellPrefab: {fileID: 1000010451630740, guid: 1746aec3da66f664b9070cd1031234af,
     type: 2}
   manaCost: 15
   buff:
     value: 0.8
-    buffType: 1
+    type: 1
     time: 1
   damage: 2
   projectileSpeed: 13

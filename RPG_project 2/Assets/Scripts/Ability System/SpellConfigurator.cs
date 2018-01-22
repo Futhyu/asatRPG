@@ -44,7 +44,9 @@ public class SpellConfigurator : MonoBehaviour {
                 StartCoroutine(AOE());
             }
         }
-    
+        else {
+            Debug.LogWarning("Ability " + ability.abilityName + "has not reference to datatype of ability!");
+        }
     }
 
     private IEnumerator AOE() {

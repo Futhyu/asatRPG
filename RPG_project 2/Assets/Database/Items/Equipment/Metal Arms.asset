@@ -13,9 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   name: Metal Arms
-  icon: {fileID: 21300436, guid: 8156a2812f8df684289e7d87f81d7099, type: 3}
-  isDefaultItem: 0
-  isQuestItem: 0
+  icon: {fileID: 21300204, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
+  type: 2
   controller: {fileID: 9100000, guid: fe47e745ca2746946a0e59e30c2af5a9, type: 2}
   quantity: 1
   equipSlot: 2

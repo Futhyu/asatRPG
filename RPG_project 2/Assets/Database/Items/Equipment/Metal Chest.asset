@@ -13,9 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   name: Metal Chest
-  icon: {fileID: 21300168, guid: d5952a0939b2aea4980dc4ad59712bbf, type: 3}
-  isDefaultItem: 0
-  isQuestItem: 0
+  icon: {fileID: 21300372, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
+  type: 2
   controller: {fileID: 9100000, guid: 0f368026e822d9d4d857a58e5789e988, type: 2}
   quantity: 1
   equipSlot: 1

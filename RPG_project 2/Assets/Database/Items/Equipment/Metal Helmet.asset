@@ -13,9 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   name: Plate Helm
-  icon: {fileID: 21300156, guid: 8e1f8f3b0f1cebd45a97a996af356711, type: 3}
-  isDefaultItem: 0
-  isQuestItem: 0
+  icon: {fileID: 21300390, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
+  type: 2
   controller: {fileID: 9100000, guid: 0479176eedb7cd942a60dc128c37ee8f, type: 2}
   quantity: 1
   equipSlot: 0

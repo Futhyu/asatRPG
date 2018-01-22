@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Inferno
   m_EditorClassIdentifier: 
   abilityName: Inferno
-  icon: {fileID: 21300034, guid: 94010bcdbb42ddb4fb6d5b9b1dcc850a, type: 3}
+  icon: {fileID: 21300562, guid: 4ca17978d87a3cd41ac47a14b898d8e2, type: 3}
   spellPrefab: {fileID: 1000010451630740, guid: e7c873b85d757f34286fe5b70c287714,
     type: 2}
   manaCost: 10
