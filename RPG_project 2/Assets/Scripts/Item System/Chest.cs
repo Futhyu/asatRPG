@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 
 public class Chest : Interactable {
 
@@ -23,6 +22,7 @@ public class Chest : Interactable {
         if (OpenChest()) {
             ChestUI.instance.chest = this;
             ChestUI.ToogleChest();
+            if (onItemChangedCallback != null) onItemChangedCallback.Invoke();
         }
     }
 

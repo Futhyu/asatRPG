@@ -32,8 +32,9 @@ public class ChestUI : MonoBehaviour {
     }
 
     public static void ToogleChest() {
+        if (instance.chest.onItemChangedCallback == null) instance.chest.onItemChangedCallback += instance.UpdateUI;
         instance.chestUI.SetActive(!instance.chestUI.activeSelf);
-        instance.UpdateUI();
+        //instance.UpdateUI();
     }
 
     

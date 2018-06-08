@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Fight2D : MonoBehaviour {
+public class Fight2D {
 
 	static GameObject NearTarget(Vector3 position, Collider2D[] array) {
         Collider2D current = null;

@@ -103,7 +103,7 @@ public class CharacterStats : MonoBehaviour {
         else if (buff.type == global::Buff.BuffType.DamageOverTime) {
             float time = 0;
             while (time < buff.time) {
-                yield return new WaitForSeconds(0.1f);
+                yield return new WaitForSeconds(1);
                 time += 1;
                 TakeDamage(buff.value);
             }
@@ -128,7 +128,7 @@ public class CharacterStats : MonoBehaviour {
         }
         else if(buff.type == global::Buff.BuffType.Stun) {
             bool isPlayer = GetComponent<PlayerStats>();
-
+            //need to rebuild
             //if(isPlayer) 
         }
         else if(buff.type == global::Buff.BuffType.Healing) {

@@ -14,14 +14,14 @@ Platform assembly: D:\Projects\GitHub\asatRPG\RPG_project 2\kek_Data\Managed\Uni
 Loading D:\Projects\GitHub\asatRPG\RPG_project 2\kek_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: D:\Projects\GitHub\asatRPG\RPG_project 2\kek_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading D:\Projects\GitHub\asatRPG\RPG_project 2\kek_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.044 seconds
+- Completed reload, in  0.115 seconds
 Platform assembly: D:\Projects\GitHub\asatRPG\RPG_project 2\kek_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: D:\Projects\GitHub\asatRPG\RPG_project 2\kek_Data\Managed\System.dll (this message is harmless)
 desktop: 1280x1024 60Hz; virtual: 1280x1024 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 0.689907 ms
+UnloadTime: 0.692464 ms
 NullReferenceException: Object reference not set to an instance of an object
   at PlayerStats.LevelUp () [0x00000] in <filename unknown>:0 
   at PlayerStats.Update () [0x00000] in <filename unknown>:0 
@@ -29,4 +29,4 @@ NullReferenceException: Object reference not set to an instance of an object
 (Filename:  Line: -1)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 1e50 -> priority: 1 
+  Thread -> id: 1b08 -> priority: 1 

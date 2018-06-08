@@ -25,7 +25,7 @@ public class ChestSlot : MonoBehaviour {
     public void UseItem() {
         if (item != null) {
             bool wasGrabbed = ChestUI.instance.chest.Grab(item);
-            if(wasGrabbed) ClearSlot();
+            //if(wasGrabbed) ClearSlot();
         }
     }
     public void OnRemoveButton() {
